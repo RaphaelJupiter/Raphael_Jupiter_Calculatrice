@@ -144,15 +144,19 @@ namespace Raphael_Jupiter_Calculatrice
                     result = first_num * second_num;
                     TB_Display.Text = result.ToString();
                     break;
-                case '*':
+                case 'C':
                     result = first_num * second_num;
                     TB_Display.Text = result.ToString();
                     break;
-                case '*':
+                case 'S':
                     result = first_num * second_num;
                     TB_Display.Text = result.ToString();
                     break;
-                case '*':
+                case 'T':
+                    result = first_num * second_num;
+                    TB_Display.Text = result.ToString();
+                    break;
+                case ',':
                     result = first_num * second_num;
                     TB_Display.Text = result.ToString();
                     break;
@@ -171,7 +175,7 @@ namespace Raphael_Jupiter_Calculatrice
             TB_Display.Text = "0";
             operation = '';
         }
-        private void BTN_sin_Click(object sender, RoutedEventArgs e)
+        private void BTN_sin_Click(object sender, RoutedEventArgs e) 
         {
             first_num = Int32.Parse(TB_Display.Text);
             TB_Display.Text = "0";
@@ -183,11 +187,11 @@ namespace Raphael_Jupiter_Calculatrice
             TB_Display.Text = "0";
             operation = '';
         }
-        private void BTN_rac_Click(object sender, RoutedEventArgs e)
+        private void BTN_vir_Click(object sender, RoutedEventArgs e)
         {
             first_num = Int32.Parse(TB_Display.Text);
-            TB_Display.Text = "0";
-            operation = '';
+            
+            operation = ',';
         }
 
     }
