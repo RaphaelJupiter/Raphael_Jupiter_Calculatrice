@@ -27,10 +27,12 @@ namespace Raphael_Jupiter_Calculatrice
         {
             InitializeComponent();
         }
-        int first_num;
-        int second_num;
-        int result;
+        double first_num;
+        double second_num;
+        double result;
         char operation;
+
+       
 
 
         public void display(string num)
@@ -97,40 +99,73 @@ namespace Raphael_Jupiter_Calculatrice
 
         private void BTN_Plus_Click(object sender, RoutedEventArgs e)
         {
-            first_num=Int32.Parse(TB_Display.Text);
+            first_num=double.Parse(TB_Display.Text);
             TB_Display.Text = "0";
             operation = '+';
         }
 
         private void BTN_Moins_Click(object sender, RoutedEventArgs e)
         {
-            first_num = Int32.Parse(TB_Display.Text);
+            first_num = double.Parse(TB_Display.Text);
             TB_Display.Text = "0";
             operation = '-';
         }
 
         private void BTN_Fois_Click(object sender, RoutedEventArgs e)
         {
-            first_num = Int32.Parse(TB_Display.Text);
+            first_num = double.Parse(TB_Display.Text);
             TB_Display.Text = "0";
             operation = '*';
         }
 
         private void BTN_diviser_Click(object sender, RoutedEventArgs e)
         {
-            first_num = Int32.Parse(TB_Display.Text);
+            first_num = double.Parse(TB_Display.Text);
             TB_Display.Text = "0";
             operation = '/';
         }
 
+
+
+        private void BTN_Clear_Click(object sender, RoutedEventArgs e)
+        {
+            TB_Display.Text = "0";
+           
+        }
+
+        private void BTN_cos_Click(object sender, RoutedEventArgs e)
+        {
+            first_num = Double.Parse(TB_Display.Text);
+            result = Math.Sin(first_num);
+            TB_Display.Text = result.ToString();
+        }
+        private void BTN_sin_Click(object sender, RoutedEventArgs e) 
+        {
+            first_num = Double.Parse(TB_Display.Text);
+            result = Math.Sin(first_num);
+            TB_Display.Text = result.ToString();
+        }
+        private void BTN_tan_Click(object sender, RoutedEventArgs e)
+        {
+            first_num = Double.Parse(TB_Display.Text);
+            result = Math.Tan(first_num);
+            TB_Display.Text = result.ToString();
+        }
+        private void BTN_vir_Click(object sender, RoutedEventArgs e)
+        {
+            first_num = double.Parse(TB_Display.Text);
+            
+            operation = ',';
+        }
+
         private void BTN_egal_Click(object sender, RoutedEventArgs e)
         {
-            second_num= Int32.Parse(TB_Display.Text);
+            second_num =double.Parse(TB_Display.Text);
             switch (operation)
             {
                 case '+':
                     result = first_num + second_num;
-                    TB_Display.Text=result.ToString();
+                    TB_Display.Text = result.ToString();
                     break;
                 case '-':
                     result = first_num - second_num;
@@ -162,38 +197,6 @@ namespace Raphael_Jupiter_Calculatrice
                     break;
             }
         }
-
-        private void BTN_Clear_Click(object sender, RoutedEventArgs e)
-        {
-            TB_Display.Text = "0";
-           
-        }
-
-        private void BTN_cos_Click(object sender, RoutedEventArgs e)
-        {
-            first_num = Int32.Parse(TB_Display.Text);
-            TB_Display.Text = "0";
-            operation = '';
-        }
-        private void BTN_sin_Click(object sender, RoutedEventArgs e) 
-        {
-            first_num = Int32.Parse(TB_Display.Text);
-            TB_Display.Text = "0";
-            operation = '';
-        }
-        private void BTN_tan_Click(object sender, RoutedEventArgs e)
-        {
-            first_num = Int32.Parse(TB_Display.Text);
-            TB_Display.Text = "0";
-            operation = '';
-        }
-        private void BTN_vir_Click(object sender, RoutedEventArgs e)
-        {
-            first_num = Int32.Parse(TB_Display.Text);
-            
-            operation = ',';
-        }
-
     }
    
 }
