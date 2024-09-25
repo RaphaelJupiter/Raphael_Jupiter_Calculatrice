@@ -25,30 +25,36 @@ namespace Raphael_Jupiter_Calculatrice
     {
         public MainWindow()
         {
-            InitializeComponent();
+            InitializeComponent(); // Initialisation des composants de l'interface utilisateur
         }
-        double first_num;
-        double second_num;
-        double result;
-        char operation;
 
-       
+        double first_num; // Variable pour stocker le premier nombre
+        double second_num; // Variable pour stocker le deuxième nombre
+        double result; // Variable pour stocker le résultat de l'opération
+        char operation; // Variable pour stocker l'opération (par exemple, '+', '-', '*', '/')
+
+
 
 
         public void display(string num)
         {
+            // Vérifie si le texte actuel de TB_Display est "0"
             if (TB_Display.Text == "0")
             {
+                // Si oui, remplace le texte par le nouveau numéro
                 TB_Display.Text = num;
             }
             else
             {
+                // Sinon, ajoute le nouveau numéro à la fin du texte existant
                 TB_Display.Text = TB_Display.Text + num;
             }
         }
 
+        // Méthode appelée lorsque le bouton BTN_1 est cliqué
         private void BTN_1_Click(object sender, RoutedEventArgs e)
         {
+            // Affiche le chiffre "1" à l'écran et les autres chiffres pour les autres evenements pour les autres chiffes de 0 à 9
             display("1");
         }
 
@@ -99,8 +105,13 @@ namespace Raphael_Jupiter_Calculatrice
 
         private void BTN_Plus_Click(object sender, RoutedEventArgs e)
         {
-            first_num=double.Parse(TB_Display.Text);
+            // Convertit le texte affiché en un nombre et le stocke dans la variable first_num
+            first_num = double.Parse(TB_Display.Text);
+
+            // Réinitialise le texte affiché à "0"
             TB_Display.Text = "0";
+
+            // Définit l'opération en cours comme étant l'addition
             operation = '+';
         }
 
@@ -154,7 +165,8 @@ namespace Raphael_Jupiter_Calculatrice
         private void BTN_vir_Click(object sender, RoutedEventArgs e)
         {
             first_num = double.Parse(TB_Display.Text);
-            
+            second_num = double.Parse(TB_Display.Text);
+            TB_Display.Text = TB_Display.Text + ','; 
             operation = ',';
         }
 
@@ -192,8 +204,8 @@ namespace Raphael_Jupiter_Calculatrice
                     TB_Display.Text = result.ToString();
                     break;
                 case ',':
-                    result = first_num * second_num;
-                    TB_Display.Text = result.ToString();
+                    result = 0;
+                   
                     break;
             }
         }
